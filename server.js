@@ -19,8 +19,7 @@ app.get("/", (req, res) => {
   res.send("your server is running");
 });
 
-const uri =
-  "mongodb+srv://Hasan:iBqQvHN2JUvXesIj@cluster0.dv4ff.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.dv4ff.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
